@@ -16,6 +16,7 @@ def main():
 
     unicorn_list = [fat_unicorn, full_unicorn, basic_unicorn, chubby_unicorn, unicorn_head]
     pic_list = uni_image.load_images_from_folder("res/")
+    random_list = [unicorn_list, pic_list]
 
     if args.text:
         print(random.choice(unicorn_list))
@@ -25,8 +26,9 @@ def main():
         uni_im.show()
 
     elif args.random:
-        random.choice([unicorn_list, pic_list])
-        if unicorn_list:
+        choice = random.choice(random_list)
+
+        if choice == unicorn_list:
             print(random.choice(unicorn_list))
         else:
             uni_im = random.choice(pic_list)
