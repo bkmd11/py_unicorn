@@ -1,3 +1,6 @@
+""" This file is just text based pictures
+    of unicorns. Very simple"""
+
 basic_unicorn = """
                 ^
                 ^^
