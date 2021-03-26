@@ -2,9 +2,8 @@ import random
 import argparse
 import sys
 
-import uni_image
-import uni_google
-from uni_corns import *
+from unicorns import uni_google, uni_image
+from unicorns.uni_corns import *
 
 
 def main():
