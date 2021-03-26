@@ -3,6 +3,7 @@ import argparse
 import sys
 
 import uni_image
+import uni_google
 from unicorns import *
 
 
@@ -11,6 +12,7 @@ def main():
     parser.add_argument('-t', '--text', action='store_true', help='shows a text based image of a unicorn')
     parser.add_argument('-i', '--image', action='store_true', help='opens an image of a unicorn')
     parser.add_argument('-r', '--random', action='store_true', help='randomly shows some time of unicorn')
+    parser.add_argument('-g', '--google', metavar='majestic', help='googles the text with a unicorn prefix')
 
     args = parser.parse_args()
 
@@ -20,11 +22,9 @@ def main():
 
     if args.text:
         print(random.choice(unicorn_list))
-
     elif args.image:
         uni_im = random.choice(pic_list)
         uni_im.show()
-
     elif args.random:
         choice = random.choice(random_list)
 
@@ -33,6 +33,9 @@ def main():
         else:
             uni_im = random.choice(pic_list)
             uni_im.show()
+    elif args.google:
+        word = args.google
+        uni_google.uni_launch(word)
     else:
         parser.parse_args(['-h'])
         sys.exit()
