@@ -11,7 +11,8 @@ def main():
     parser.add_argument('-t', '--text', action='store_true', help='shows a text based image of a unicorn')
     parser.add_argument('-i', '--image', action='store_true', help='opens an image of a unicorn')
     parser.add_argument('-r', '--random', action='store_true', help='randomly shows some time of unicorn')
-    parser.add_argument('-g', '--google', metavar='description of unicorn', nargs='?', help='googles "{description} unicorn"')
+    parser.add_argument('-g', '--google', metavar='description of unicorn', nargs='?',
+                        help='googles "{description} unicorn"')
 
     args = parser.parse_args()
 
