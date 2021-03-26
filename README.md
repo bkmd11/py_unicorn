@@ -1,7 +1,7 @@
 # py_unicorn
 a cli tool that shows unicorns
 
-if you are ever feeling down, or add an easter egg, or just want to see a unicorn...
+if you are ever feeling down, or want to add an easter egg, or just want to see a unicorn...
 
 this project is for you!
 
