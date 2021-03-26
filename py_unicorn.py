@@ -18,24 +18,28 @@ def main():
 
     unicorn_list = [fat_unicorn, full_unicorn, basic_unicorn, chubby_unicorn, unicorn_head]
     pic_list = uni_image.load_images_from_folder("res/")
-    random_list = [unicorn_list, pic_list]
+    google_list = ['fat', 'chubby', 'majestic', 'prancing', 'rude', 'sexy', 'ripped', 'swole', 'cat', 'salty']
+    random_list = [unicorn_list, pic_list, google_list]
 
     if args.text:
         print(random.choice(unicorn_list))
     elif args.image:
         uni_im = random.choice(pic_list)
         uni_im.show()
+    elif args.google:
+        word = args.google
+        uni_google.uni_launch(word)
     elif args.random:
         choice = random.choice(random_list)
 
         if choice == unicorn_list:
             print(random.choice(unicorn_list))
-        else:
+        elif choice == pic_list:
             uni_im = random.choice(pic_list)
             uni_im.show()
-    elif args.google:
-        word = args.google
-        uni_google.uni_launch(word)
+        else:
+            word = random.choice(google_list)
+            uni_google.uni_launch(word)
     else:
         parser.parse_args(['-h'])
         sys.exit()
