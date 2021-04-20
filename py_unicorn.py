@@ -2,6 +2,8 @@ import random
 import argparse
 import sys
 
+from pprint import pprint
+
 from unicorns import uni_google, uni_image
 from unicorns.uni_corns import *
 
@@ -27,10 +29,12 @@ def main():
         print(random.choice(unicorn_list))
     elif args.image:
         if args.keyword:
+            image = uni_image.load_keyword_image(args.keyword)
             try:
-                uni_image.load_keyword_image(args.keyword).show()
+                image.show()
             except AttributeError:
-                print(uni_image.load_keyword_image(args.keyword))
+                for i in image:
+                    print(i)
         else:
             uni_im = random.choice(pic_list)
             uni_im.show()

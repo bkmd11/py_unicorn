@@ -26,4 +26,15 @@ def load_keyword_image(word):
     elif png in files:
         return Image.open(os.path.join(FOLDER, png))
     else:
-        return 'Unicorn not found'
+        error_message = keyword_options()
+        error_message.insert(0, 'Unicorn not found try:')
+        return error_message
+
+
+def keyword_options():
+    words = []
+    files = os.listdir(FOLDER)
+    for i in files:
+        keyword = i.split('_')
+        words.append(keyword[0])
+    return words
