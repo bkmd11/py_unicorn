@@ -62,7 +62,7 @@ fat_unicorn = """
                         @@@@/      @@  
                          """
 
-unicorn_head = """
+head_unicorn = """
                             ,           *
                             ,,         ***
                             ,,,         *                       
@@ -78,7 +78,7 @@ unicorn_head = """
          *
         """
 
-full_unicorn = """                                               
+majestic_unicorn = """                                               
      @ 
       @@                                        
        @@ @@@@@@$                                 
@@ -98,7 +98,7 @@ full_unicorn = """
 %                                             
     """
 
-kawaii_uni = """
+kawaii_unicorn = """
                                                 
                      @                            
                     *..@                          
@@ -153,3 +153,14 @@ cat_unicorn = """
    ,....,******,@.,//////,////((((((@        ...@*,,,,, . .  *///////////*      
        &@#....*********@@/////*((((@@@      .......@#,,,,,,,,/////////@   
 """
+
+
+def __text_keywords():
+    """I look at all the variables in this file and return a keyword list for search hints"""
+    global_vars = [i[0] for i in globals().items()]
+    my_objects = [i for i in global_vars if '__' not in i]
+    keywords = [i.split('_unicorn')[0] for i in my_objects]
+
+    keywords.insert(0, 'Unicorn not found try:')
+
+    return keywords
